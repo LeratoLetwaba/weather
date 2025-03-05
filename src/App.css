@@ -1,38 +1,148 @@
 .App {
   text-align: center;
+  /*display: flex;*/
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Map Container Size*/
+
+.leaflet-container {
+  height: 100vh !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/*high resolution Sidebar*/
+.sidebar {
+  width: 350px;
+  background-color: #fff;
   color: white;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  position: absolute;
+  z-index: 100000;
+  margin: 40px;
+  margin-left: 40px;
+  margin-left: 60px;
+  border-radius: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+/*Mobile Sidebar*/
+.sidebar-mobile {
+  display: none;
+  width: 280px;
+  background-color: #fff;
+  color: white;
+  padding: 10px;
+  padding-top: 20px;
+
+  z-index: 100000;
+
+  border-radius: 12px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-content {
+  /*flex: 1;   */
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}
+
+p {
+  font-size: 1em;
+  color: #333;
+}
+
+/*Sidebar search */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #b5b5b5;
+  border-radius: 30px;
+  padding: 4px;
+  padding-left: 4px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.search-input {
+  border: none;
+  width: 90%;
+  background-color: transparent;
+  color: #333;
+  font-size: 1em;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.Search-button {
+  background: #474747;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+  color: #b5b5b5;
+  height: 37px;
+  border-radius: 50%;
+  width: 40px;
+}
+/* End Sidebar search */
+
+
+.logo {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px;
+  border-top: 1px solid #b5b5b5;
+  margin-bottom: -6px;
+}
+
+.weather-info div {
+  width: 50%;
+  text-align: left;
+}
+.desc {
+  background: #ffcb05;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #e7ba05;
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  color: #ffcb05 !important;
+}
+
+.popup {
+  display: none;
+}
+
+@media screen and (max-width: 691px) {
+  .logo {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar-mobile {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .popup {
+    display: block;
   }
 }
